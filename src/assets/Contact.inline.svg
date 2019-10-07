@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138.0779 105.9326">
+  <title>plane</title>
+  <g>
+    <path d="M2.5114,56.09l70.2474-9.1131-37.0672,27.34L2.5814,57.384a1.2929,1.2929,0,0,1,.1049-2.3533L134.6825,1.9555a1.1073,1.1073,0,0,1,1.4439,1.4289l-39.3406,100.24a.6894.6894,0,0,1-.9442.3647L51.26,81.9406a1.4146,1.4146,0,0,0-1.9185.5995L45.21,97.6638" fill="none" stroke="#e6e5e5" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.7472"/>
+    <path d="M72.7568,46.9758,133.6013,3.4733a.26.26,0,0,1,.3248.4047L83.6137,50.0635,50.1288,81.385" fill="none" stroke="#e6e5e5" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.7472"/>
+    <path d="M35.69,74.3188l8.3987,22.8379a1.416,1.416,0,0,0,2.2633.5746L58.8323,86.7045" fill="none" stroke="#e6e5e5" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.7472"/>
+    <line x1="96.5131" y1="103.7058" x2="83.7126" y2="50.1509" fill="none" stroke="#e6e5e5" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.7472"/>
+  </g>
+</svg>
