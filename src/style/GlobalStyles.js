@@ -12,14 +12,6 @@ const GlobalStyles = createGlobalStyle`
       color: ${({ theme }) => theme.dark};
    }
 
-   .bottomBackgroundColorHome {
-      background-color: ${({ theme }) => theme.green};
-   }
-
-   .bottomBackgroundColorPages {
-      background-color: ${({ theme }) => theme.white};
-   }
-
    /* =========================================*/
    /* Font ====================================*/
    /* =========================================*/
