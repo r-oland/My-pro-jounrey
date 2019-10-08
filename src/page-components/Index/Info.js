@@ -163,7 +163,7 @@ export default function Info() {
                <Button type="info" to="/about">
                   More about me
                </Button>
-               <Button type="info" to="/">
+               <Button type="info" to="/journal">
                   Journal
                </Button>
                <Button type="info" to="/blog">

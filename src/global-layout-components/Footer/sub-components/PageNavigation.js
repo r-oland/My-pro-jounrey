@@ -31,7 +31,7 @@ export default function PageNavigation() {
             <Link to="/">Home</Link>
          </li>
          <li>
-            <Link to="/">Journal</Link>
+            <Link to="/journal">Journal</Link>
          </li>
          <li>
             <Link to="/blog">Blog</Link>

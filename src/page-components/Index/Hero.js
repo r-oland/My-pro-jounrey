@@ -250,7 +250,7 @@ export default function Hero() {
          <HeroContainer>
             <WelcomText>Ahoi! where would you like to travel to?</WelcomText>
             <HeroButtons>
-               <Button type="hero" to="/">
+               <Button type="hero" to="/journal">
                   My journey
                </Button>
                <Button type="hero2" to="/blog">

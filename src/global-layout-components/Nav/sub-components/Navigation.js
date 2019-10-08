@@ -25,7 +25,7 @@ export default function Navigation({ pageStyle }) {
    return (
       <NavigationWrapper pageStyle={pageStyle}>
          <li>
-            <Link to="/">Journal</Link>
+            <Link to="/journal">Journal</Link>
          </li>
          <li>
             <Link to="/blog">Blog</Link>
