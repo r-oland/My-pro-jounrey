@@ -65,8 +65,6 @@ const AboutTekst = styled.p`
 `;
 
 export default function Content({ headshot }) {
-   console.log(headshot);
-
    return (
       <ContentWrapper>
          <Img fluid={headshot} alt="headshot" className="headshotImg" />

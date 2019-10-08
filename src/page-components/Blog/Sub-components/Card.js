@@ -1,6 +1,5 @@
 // Components==============
 import CardWaveImp from "assets/CardWave.svg";
-import test from "assets/test.jpg";
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
@@ -16,7 +15,7 @@ const CardWrapper = styled(Link)`
    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
    &:hover {
-      transform: translateY(5px);
+      transform: translateY(-5px);
       transition: 0.5s;
    }
 
@@ -37,7 +36,7 @@ const CardWave = styled.div`
    bottom: 0;
    padding: 6.4em 1.2em 2em;
 
-   @media screen and (min-width: 430px) and (max-width: 626px) {
+   @media screen and (min-width: 430px) and (max-width: 647px) {
       padding-top: 8.4em;
    }
 `;
@@ -53,19 +52,27 @@ const ShortDescription = styled.p`
    ${flexUnit(8, 13, 14, "vw", "font-size")}
 `;
 
-export default function Card() {
-   return (
-      <CardWrapper to="/">
-         <img src={test} alt="" className="cardImage" />
-         <CardWave>
-            <BlogTitle>A reasonable blog title test</BlogTitle>
-            <ShortDescription>
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-               Consequuntur, ex nobis velit eum unde sint officiis error vero
-               dolorem ducimus in deserunt incidunt beatae ea architecto sunt
-               quasi.
-            </ShortDescription>
-         </CardWave>
-      </CardWrapper>
-   );
+export default function Card({ data, sortOrder }) {
+   const cards = data.map(edge => {
+      const slug = edge.node.slug;
+      const blogImg = edge.node.blogImage.file.url;
+      const title = edge.node.title;
+      const description = edge.node.shortDescription;
+
+      return (
+         <CardWrapper to={`/blog/${slug}`} key={slug}>
+            <img src={blogImg} alt="blogImg" className="cardImage" />
+            <CardWave>
+               <BlogTitle>{title}</BlogTitle>
+               <ShortDescription>{description}</ShortDescription>
+            </CardWave>
+         </CardWrapper>
+      );
+   });
+
+   if (sortOrder === "Newest first") {
+      return cards;
+   } else {
+      return cards.reverse();
+   }
 }

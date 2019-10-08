@@ -58,8 +58,7 @@ const OrderList = styled.ul`
    }
 `;
 
-export default function Filter() {
-   const [sortOrder, setSortOrder] = useState("Newest first");
+export default function Filter({ sortOrder, setSortOrder }) {
    const [isExpended, setIsExpended] = useState(false);
 
    function setNewestFirst() {

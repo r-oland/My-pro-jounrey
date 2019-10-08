@@ -1,5 +1,6 @@
 // Components==============
-import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Container } from "../../global-ui-components/Container";
 import { flexUnit } from "../../style/Mixins";
@@ -8,10 +9,11 @@ import Filter from "./Sub-components/Filter";
 // =========================
 
 const BlogPostsWrapper = styled.div`
+   margin: 0.5em 0 4em;
+
    h2 {
       ${flexUnit(9, 30, 38, "vw", "font-size")};
       text-align: center;
-      margin-top: 0.5em;
 
       @media screen and (min-width: 1000px) {
          text-align: left;
@@ -35,22 +37,37 @@ const CardSection = styled.div`
 `;
 
 export default function BlogPosts() {
+   const [sortOrder, setSortOrder] = useState("Newest first");
+
+   const data = useStaticQuery(graphql`
+      query blogPostPage {
+         allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
+            edges {
+               node {
+                  blogImage {
+                     file {
+                        url
+                     }
+                  }
+                  shortDescription
+                  title
+                  slug
+                  publishedDate(formatString: "MM/DD/YYYY HH:mm")
+               }
+            }
+         }
+      }
+   `).allContentfulBlogPost.edges;
+
    return (
       <BlogPostsWrapper>
          <Container>
             <TitleWrapper>
                <h2>Blog</h2>
-               <Filter />
+               <Filter sortOrder={sortOrder} setSortOrder={setSortOrder} />
             </TitleWrapper>
             <CardSection>
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
-               <Card />
+               <Card data={data} sortOrder={sortOrder} />
             </CardSection>
          </Container>
       </BlogPostsWrapper>
