@@ -27,7 +27,6 @@ export default function Head({ title, description, keywords, pageStyle }) {
             rel="stylesheet"
             href="https://use.typekit.net/clp7zrc.css"
          ></link>
-
          <html lang="en" />
       </Helmet>
    );

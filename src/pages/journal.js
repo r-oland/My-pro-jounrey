@@ -6,28 +6,24 @@ import styled from "styled-components";
 import Head from "../global-layout-components/Layout/Head";
 import Layout from "../global-layout-components/Layout/Layout";
 import { Container } from "../global-ui-components/Container";
-import Description from "../page-components/Journal/Description";
-import Dropdown from "../page-components/Journal/Dropdown";
-import JournalCard from "../page-components/Journal/JournalCard";
-import Slider from "../page-components/Journal/Slider";
-
+import FullSection from "../page-components/Journal/FullSection";
 // =========================
 
-const MainSection = styled.div`
+const Arrows = styled.div`
    display: flex;
    justify-content: space-between;
-   align-items: center;
+   height: 20vh;
 `;
 
 const LeftArrowSvg = styled(LeftArrowImp)`
-   width: 20px;
+   width: 15px;
 `;
 
 const RightArrowSvg = styled(RightArrowImp)`
-   width: 20px;
+   width: 15px;
 `;
 
-export default function journal({ data }) {
+export default function journal() {
    return (
       <Layout pageStyle="page">
          <Head
@@ -35,16 +31,12 @@ export default function journal({ data }) {
             description="Page description goes here"
             keywords="content"
          />
-         <Container style={{ minHeight: "100vh" }}>
-            <MainSection>
+         <Container style={{ position: "relative" }}>
+            <FullSection />
+            <Arrows>
                <LeftArrowSvg />
-               <JournalCard>
-                  <Dropdown />
-                  <Description />
-               </JournalCard>
                <RightArrowSvg />
-            </MainSection>
-            <Slider />
+            </Arrows>
          </Container>
       </Layout>
    );

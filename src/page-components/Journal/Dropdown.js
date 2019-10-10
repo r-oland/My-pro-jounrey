@@ -7,10 +7,11 @@ import { flexUnit } from "../../style/Mixins";
 // =========================
 
 const DropDownWrapper = styled.div`
-   margin: 2em auto 5em;
+   margin: 1em auto 2em;
    width: 70%;
    text-align: center;
    position: relative;
+   z-index: 2;
 `;
 
 const OrderBar = styled.div`
@@ -55,7 +56,7 @@ const OrderList = styled.ul`
    }
 `;
 
-export default function DropDown() {
+export default function DropDown({ week }) {
    const [isExpended, setIsExpended] = useState(false);
 
    function expandMenu() {
@@ -65,7 +66,7 @@ export default function DropDown() {
    return (
       <DropDownWrapper>
          <OrderBar onClick={expandMenu}>
-            <Order>week 40</Order>
+            <Order>week {week}</Order>
             <TriangleSvg />
          </OrderBar>
          <OrderList isExpended={isExpended}>
