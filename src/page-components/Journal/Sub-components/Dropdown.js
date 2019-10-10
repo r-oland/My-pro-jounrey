@@ -2,7 +2,7 @@
 import TriangleImp from "assets/Triangle.inline.svg";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { flexUnit } from "../../style/Mixins";
+import { flexUnit } from "../../../style/Mixins";
 
 // =========================
 

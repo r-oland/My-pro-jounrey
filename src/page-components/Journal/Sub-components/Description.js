@@ -1,7 +1,7 @@
 // Components==============
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../global-ui-components/Button";
+import { Button } from "../../../global-ui-components/Button";
 // =========================
 
 const DescriptionWrapper = styled.div`
@@ -35,6 +35,11 @@ const ShortDescription = styled.p``;
 
 const JournalButton = styled(Button)`
    margin: 0 auto;
+
+   &:hover {
+      background-color: ${({ theme }) => theme.dark};
+      transition: 0.5s;
+   }
 `;
 
 export default function Description({ keywords, shortDescription, slug }) {

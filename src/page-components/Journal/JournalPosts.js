@@ -1,11 +1,11 @@
 // Components==============
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import Carousel from "./Carousel";
-import MainSection from "./MainSection";
+import Carousel from "./Sub-components/Carousel";
+import MainSection from "./Sub-components/MainSection";
 // =========================
 
-export default function FullSection() {
+export default function JournalPosts() {
    const data = useStaticQuery(graphql`
       query JournalAllQuery2 {
          allContentfulJournalPost {

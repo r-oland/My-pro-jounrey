@@ -23,7 +23,7 @@ const MainSectionWrapper = styled.div`
 export default function MainSection() {
    const data = useStaticQuery(graphql`
       query JournalAllQuery {
-         allContentfulJournalPost {
+         allContentfulJournalPost(sort: { fields: publishDate, order: DESC }) {
             edges {
                node {
                   slug

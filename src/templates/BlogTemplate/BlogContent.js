@@ -7,7 +7,7 @@ import { flexUnit } from "../../style/Mixins";
 // =========================
 
 const BlogContainer = styled.div`
-   margin: 2.8em auto 4em;
+   margin: 1em auto 4em;
 
    @media screen and (min-width: 768px) {
       max-width: 80%;
