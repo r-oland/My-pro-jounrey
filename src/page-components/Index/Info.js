@@ -23,15 +23,15 @@ const swim = keyframes`
 const InfoWrapper = styled.div`
    background-color: #487c85;
    position: relative;
-   bottom: -20vh;
-   padding-bottom: 20vh;
+   bottom: -15vh;
+   padding-bottom: 15vh;
 `;
 
 const Fishes = styled.div``;
 
 const RedFishSvg = styled(RedFishImp)`
    position: absolute;
-   top: -26vh;
+   top: -21vh;
    right: 0;
    z-index: 10;
    width: 120px;
@@ -61,7 +61,7 @@ const OrangeFishSvg = styled(OrangeFishImp)`
 
 const DarkFishSvg = styled(DarkFishImp)`
    position: absolute;
-   bottom: 25vh;
+   bottom: 16vh;
    right: 0;
    width: 140px;
    animation: ${swim} 22s ease-in-out -12s infinite;
@@ -76,16 +76,24 @@ const DarkFishSvg = styled(DarkFishImp)`
 `;
 
 const TextWrapper = styled.div`
-   background-image: url(${textWrapper});
+   background-color: ${({ theme }) => theme.white};
+   opacity: 0.94;
+   border-radius: 40px;
    position: relative;
    z-index: 11;
    background-size: 100% 100%;
-   bottom: 20vh;
-   padding: 1rem 1.8rem;
-   margin: 2em 1.3em 0;
+   bottom: 15vh;
+   padding: 1rem 1.3rem;
+   margin: 2em 0.8em 0;
+   text-align: center;
 
    h4 {
       color: ${({ theme }) => theme.red};
+      margin: 0.5em 0;
+
+      @media screen and (min-width: 768px) {
+         margin: 0;
+      }
    }
 
    p {
@@ -94,35 +102,70 @@ const TextWrapper = styled.div`
 
       @media screen and (min-width: 768px) {
          font-weight: 400;
+         line-height: 1.8;
       }
    }
 
-   @media screen and (min-width: 500px) {
-      padding: 1rem calc(2rem + 3vw);
+   @media screen and (min-width: 768px) {
+      padding: 3.5em calc(2rem + 3vw) 2.5em;
       margin: 2.5em calc(2em + 4vw) 0;
    }
 
+   @media screen and (min-width: 768px) {
+      background-image: url(${textWrapper});
+      opacity: 1;
+      background-color: initial;
+   }
+
    @media screen and (min-width: 1200px) {
-      padding: 1rem calc(2rem + 7vw);
       margin: 4em calc(6em + 7vw) 0;
    }
 `;
 
 const InfoButtons = styled.div`
-   display: flex;
-   flex-direction: column;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 60px 60px;
+   grid-gap: 5px 0;
+   justify-items: center;
    align-items: center;
-   justify-content: space-around;
-   height: 200px;
-   margin-bottom: 3em;
+   margin-bottom: 1em;
+
+   .B1 {
+      grid-column: 1/3;
+      grid-row: 2;
+   }
+   .B2 {
+      grid-column: 2/3;
+      grid-row: 1;
+      width: 7.5em;
+      height: 3em;
+
+      @media screen and (min-width: 500px) {
+         height: 3em;
+         width: 9em;
+      }
+   }
+   .B3 {
+      grid-column: 1/2;
+      grid-row: 1;
+      width: 7.5em;
+      height: 3em;
+
+      @media screen and (min-width: 500px) {
+         height: 3em;
+         width: 9em;
+      }
+   }
 
    @media screen and (min-width: 768px) {
-      flex-direction: inherit;
+      display: flex;
       height: 70px;
+      justify-content: space-around;
    }
 
    @media screen and (min-width: 1000px) {
-      margin: 0 calc(1.2em + 3vw) 3em;
+      margin: 0 calc(1.2em + 3vw) 1em;
    }
 `;
 
@@ -160,13 +203,13 @@ export default function Info() {
             </p>
 
             <InfoButtons>
-               <Button type="info" to="/about">
+               <Button type="info" to="/about" className="B1">
                   More about me
                </Button>
-               <Button type="info" to="/journal">
+               <Button type="info" to="/journal" className="B2">
                   Journal
                </Button>
-               <Button type="info" to="/blog">
+               <Button type="info" to="/blog" className="B3">
                   Blog
                </Button>
             </InfoButtons>

@@ -6,19 +6,26 @@ import React from "react";
 import styled from "styled-components";
 // =========================
 
-const ArrowsWrapper = styled.div`
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
-   height: 20vh;
-`;
+const ArrowsWrapper = styled.div``;
 
 const LeftArrowSvg = styled(LeftArrowImp)`
+   position: absolute;
+   bottom: 10vh;
    width: 15px;
+   left: 0;
+   @media screen and (min-width: 1000px) {
+      bottom: 50vh;
+   }
 `;
 
 const RightArrowSvg = styled(RightArrowImp)`
    width: 15px;
+   position: absolute;
+   bottom: 10vh;
+   right: 0;
+   @media screen and (min-width: 1000px) {
+      bottom: 50vh;
+   }
 `;
 
 export default function Arrows() {

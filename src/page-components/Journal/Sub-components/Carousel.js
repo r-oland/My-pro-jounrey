@@ -13,7 +13,7 @@ export default function Carousel({ children, amountOfPages }) {
          totalSlides={amountOfPages}
          infinite={true}
       >
-         <Slider>{children}</Slider>
+         <Slider className="test">{children}</Slider>
          <Arrows />
       </CarouselProvider>
    );

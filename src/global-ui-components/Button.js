@@ -1,6 +1,6 @@
+import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import { flexUnit } from "../style/Mixins";
-import { Link } from "gatsby";
 
 export const Button = styled(Link)`
    display: flex;
@@ -52,7 +52,7 @@ export const Button = styled(Link)`
          type === "info" &&
          css`
             background-color: inherit;
-            border: ${({ theme }) => theme.dark} solid 2px;
+            border: ${({ theme }) => theme.dark} solid 1.6px;
             color: ${({ theme }) => theme.dark};
             text-align: center;
             padding: 0;

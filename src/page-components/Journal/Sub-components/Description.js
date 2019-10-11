@@ -5,7 +5,11 @@ import { Button } from "../../../global-ui-components/Button";
 // =========================
 
 const DescriptionWrapper = styled.div`
+   height: 85%;
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
 `;
 
 const JournalCardSmall = styled.div`
@@ -17,13 +21,10 @@ const JournalCardSmall = styled.div`
    }
 
    @media screen and (min-width: 1000px) {
-      border-radius: 20px;
+      border-radius: 10px;
       position: relative;
       margin-top: 1em;
-      padding: 1em 2em;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
-
-      width: 50%;
+      width: 60%;
    }
 `;
 

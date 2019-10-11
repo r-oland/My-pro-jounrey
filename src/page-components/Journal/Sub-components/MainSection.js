@@ -8,13 +8,19 @@ import DropDown from "./Dropdown";
 // =========================
 
 const MainSectionWrapper = styled.div`
+   padding-top: 5vh;
    width: 90%;
+   height: 70vh;
    margin: 0 auto;
    @media screen and (min-width: 1000px) {
+      background-color: #fff8ee;
+      position: absolute;
+      top: 35%;
+      transform: translateY(-35%);
+      height: initial;
       width: 75%;
       border-radius: 20px;
       position: relative;
-      margin-top: 3em;
       padding: 1em 2em;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
    }
@@ -43,7 +49,7 @@ export default function MainSection() {
       const shortDescription = content.node.shortDescription;
 
       return (
-         <Slide index={week} key={week} style={{ height: "70vh" }}>
+         <Slide index={week} key={week} style={{ height: "90vh" }}>
             <MainSectionWrapper key={slug}>
                <DropDown week={week} />
                <Description

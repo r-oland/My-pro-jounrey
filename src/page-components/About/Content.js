@@ -6,11 +6,18 @@ import { flexUnit } from "../../style/Mixins";
 // =========================
 
 const ContentWrapper = styled.div`
+   min-height: 90vh;
    @media screen and (min-width: 1000px) {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      margin: 1rem 0 2rem;
+      margin: calc(1rem + 1vw) 0 2rem;
       grid-column-gap: 30px;
+      grid-row-gap: 50px;
+      align-content: start;
+   }
+
+   @media screen and (min-width: 1600px) {
+      margin-top: calc(3em + 2vw);
    }
 
    .headshotImg {
@@ -60,7 +67,7 @@ const AboutTekst = styled.p`
    grid-column: 1;
 
    @media screen and (min-width: 1000px) {
-      margin: 1.5em 0 0;
+      margin: 0;
    }
 `;
 
