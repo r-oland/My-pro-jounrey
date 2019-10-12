@@ -12,6 +12,10 @@ const NavigationWrapper = styled.ul`
       display: ${prop => (prop.pageStyle === "home" ? "none" : "flex")};
    }
 
+   .currentPage {
+      color: ${({ theme }) => theme.red};
+   }
+
    li {
       padding-left: 5em;
    }
@@ -25,13 +29,19 @@ export default function Navigation({ pageStyle }) {
    return (
       <NavigationWrapper pageStyle={pageStyle}>
          <li>
-            <Link to="/journal">Journal</Link>
+            <Link to="/journal" activeClassName="currentPage">
+               Journal
+            </Link>
          </li>
          <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" activeClassName="currentPage">
+               Blog
+            </Link>
          </li>
          <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" activeClassName="currentPage">
+               About
+            </Link>
          </li>
       </NavigationWrapper>
    );

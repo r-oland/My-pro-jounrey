@@ -99,7 +99,7 @@ const TextWrapper = styled.div`
    p {
       font-weight: 300;
       line-height: 1.6;
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
 
       @media screen and (min-width: 768px) {
          font-weight: 400;
@@ -201,7 +201,7 @@ export default function Info() {
                experiment. The hypothesis is as followed:
                <Span>
                   `I’m able to educate myself in a more enjoyable and effective
-                  matter with the same or better results while using the
+                  way, whilst achieving the same or better results with the
                   internet as my teacher.`
                </Span>
                <br />

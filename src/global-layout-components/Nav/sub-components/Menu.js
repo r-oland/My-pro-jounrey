@@ -12,6 +12,10 @@ const HamburgerWrapper = styled.div`
    @media screen and (min-width: 800px) {
       display: none;
    }
+
+   .currentPage {
+      color: ${({ theme }) => theme.red};
+   }
 `;
 
 const MenuSvg = styled(MenuImp)`
@@ -73,13 +77,19 @@ export default function Hamburger({ pageStyle }) {
          <Menu menuState={menuState}>
             <ul>
                <li>
-                  <Link to="/journal">Journal</Link>
+                  <Link to="/journal" activeClassName="currentPage">
+                     Journal
+                  </Link>
                </li>
                <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/blog" activeClassName="currentPage">
+                     Blog
+                  </Link>
                </li>
                <li>
-                  <Link to="/about">about</Link>
+                  <Link to="/about" activeClassName="currentPage">
+                     About
+                  </Link>
                </li>
             </ul>
          </Menu>
