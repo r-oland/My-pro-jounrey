@@ -2,14 +2,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../global-ui-components/Button";
+import { flexUnit } from "../../../style/Mixins";
 // =========================
 
 const DescriptionWrapper = styled.div`
-   height: 85%;
+   height: 100%;
    text-align: center;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
 `;
 
 const JournalCardSmall = styled.div`
@@ -21,21 +19,47 @@ const JournalCardSmall = styled.div`
    }
 
    @media screen and (min-width: 1000px) {
-      border-radius: 10px;
-      position: relative;
-      margin-top: 1em;
       width: 60%;
    }
 `;
 
-const SubjectTitle = styled.strong``;
+const SubjectTitle = styled.strong`
+   font-weight: 500;
+   ${flexUnit(6, 17, 22, "vw", "font-size")}
+`;
 
-const Subjects = styled.p``;
+const Bar = styled.div`
+   border-bottom: 1px solid ${({ theme }) => theme.dark};
+   margin: 1.6em auto;
+   width: 40px;
+`;
 
-const ShortDescription = styled.p``;
+const Subjects = styled.p`
+   ${flexUnit(6, 14, 17, "vw", "font-size")}
+   margin: 0.3em 0 1em;
+   font-weight: 300;
+`;
+
+const ShortDescription = styled.p`
+   line-height: 1.4;
+   ${flexUnit(4, 16, 19, "vw", "font-size")}
+
+   @media screen and (min-width: 1000px) {
+      line-height: 2;
+   }
+`;
 
 const JournalButton = styled(Button)`
    margin: 0 auto;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 30px;
+
+   @media screen and (min-width: 1000px) {
+      position: initial;
+      transform: translateX(0);
+   }
 
    &:hover {
       background-color: ${({ theme }) => theme.dark};
@@ -47,11 +71,13 @@ export default function Description({ keywords, shortDescription, slug }) {
    return (
       <DescriptionWrapper>
          <JournalCardSmall>
-            <SubjectTitle>This weeks subjects</SubjectTitle>
+            <SubjectTitle>Subjects</SubjectTitle>
+
             <Subjects>{keywords}</Subjects>
+            <Bar />
          </JournalCardSmall>
          <ShortDescription>{shortDescription}</ShortDescription>
-         <JournalButton to={`/journal/${slug}`}>Visit entry</JournalButton>
+         <JournalButton to={`/journal/${slug}`}>Visit</JournalButton>
       </DescriptionWrapper>
    );
 }

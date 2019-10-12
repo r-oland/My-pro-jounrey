@@ -99,6 +99,7 @@ const TextWrapper = styled.div`
    p {
       font-weight: 300;
       line-height: 1.6;
+      margin-bottom: 2em;
 
       @media screen and (min-width: 768px) {
          font-weight: 400;
@@ -120,6 +121,11 @@ const TextWrapper = styled.div`
    @media screen and (min-width: 1200px) {
       margin: 4em calc(6em + 7vw) 0;
    }
+`;
+
+const Span = styled.span`
+   font-weight: 500;
+   font-style: italic;
 `;
 
 const InfoButtons = styled.div`
@@ -180,26 +186,36 @@ export default function Info() {
          <TextWrapper>
             <h4>Great question!</h4>
             <p>
-               At may 2019 I decided to temporarily (to be decided) drop out of
-               college. The reason? I thought I could do better myself. Now hold
-               on.. I don’t mean to sound like a cheesy movie intro, see it more
-               like an experiment. The hypothesis is that I’m able to educate
-               myself in a more enjoyable and eﬀective way with the same or
-               better results, while using the internet as my teacher.
+               Midway 2019 I began to question my choice for going to college. I
+               wondered whether I went because it was a well thought out
+               decision that would be of the most value to me or whether I went
+               because I was 'supposed to'. I passed the year with the full
+               amount of obtainable points without any real problems. And yet I
+               never really felt like I was learning something that was of real
+               value to my at that moment or in the future. Rather, I often felt
+               restricted to think and act in boxes.
                <br />
                <br />
-               At the time of writing I’m a couple months into the experiment
-               and let’s just say that the results are pretty promising so far.
-               I’m currently working as a freelance web developer/designer
-               (explains these cool ﬁshes). While prior to the experiment I had
-               little to no experience with either web development nor design.
+               And so I decided to listen to my gut feeling and took matters
+               into my own hands. I guess you could see it as a little
+               experiment. The hypothesis is as followed:
+               <Span>
+                  `I’m able to educate myself in a more enjoyable and effective
+                  matter with the same or better results while using the
+                  internet as my teacher.`
+               </Span>
+               <br />
+               <br />
+               At the time of writing, I’m a couple of months into this
+               so-called experiment and I have educated myself in becoming a
+               freelance web developer/designer (explains the fishes) 🐠.
                <br />
                <br />
                So why should you care? Well.. you shouldn’t. This is mainly for
                myself, but if you happened to be in a similar position or been
                thinking about moving yourself in a similar position, you're able
-               to reed my approach, results and failures in a weekly journal and
-               various blog posts.
+               to reed my approach, results, and failures in a public journal
+               and various blog posts.
             </p>
 
             <InfoButtons>

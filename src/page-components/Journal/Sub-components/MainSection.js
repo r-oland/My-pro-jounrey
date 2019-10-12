@@ -8,21 +8,22 @@ import DropDown from "./Dropdown";
 // =========================
 
 const MainSectionWrapper = styled.div`
-   padding-top: 5vh;
    width: 90%;
-   height: 70vh;
-   margin: 0 auto;
+   height: calc(63vh - 14vw);
+   margin: 6em auto 0;
+   padding: 1em 1em 2em;
+   background-color: #fff8ee;
+   border-radius: 20px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+   position: relative;
+
    @media screen and (min-width: 1000px) {
-      background-color: #fff8ee;
-      position: absolute;
+      margin: 0 auto;
       top: 35%;
       transform: translateY(-35%);
       height: initial;
       width: 75%;
-      border-radius: 20px;
-      position: relative;
       padding: 1em 2em;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
    }
 `;
 

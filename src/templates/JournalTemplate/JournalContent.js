@@ -75,7 +75,7 @@ export default function JournalContent({ week, content }) {
                <LeftArrowWrapper to="/journal">
                   <LeftArrowSvg />
                </LeftArrowWrapper>
-               <Title>week {week}</Title>
+               <Title>Entry {week}</Title>
             </TitleWrapper>
             {documentToReactComponents(content, richTextOptions)}
          </Content>

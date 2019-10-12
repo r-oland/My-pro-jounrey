@@ -71,7 +71,21 @@ const AboutTekst = styled.p`
    }
 `;
 
+const Italic = styled.span`
+   font-style: italic;
+`;
+
 export default function Content({ headshot }) {
+   function calcAge() {
+      const today = new Date();
+      const birthDay = new Date("20, january, 1999");
+      const difference = Math.floor(Math.abs(today - birthDay) / 31536000000);
+
+      return difference;
+   }
+
+   const age = calcAge();
+
    return (
       <ContentWrapper>
          <Img fluid={headshot} alt="headshot" className="headshotImg" />
@@ -79,27 +93,23 @@ export default function Content({ headshot }) {
             I'll keep it short <span>.</span>
          </IKIS>
          <AboutTekst>
-            My name is Roland Branten, 20 years old and I live in Eindhoven, the
-            Netherlands. At the moment my big passions are coding, design and
-            music. I’v been playing guitar ever since I can properly remember
-            and I’m a singer ever since I dared to be. Coding and design are
-            farley new to the list, but since I now spend the vast majority of
-            my days on these 2 crafts, it seemed ﬁtting to add them to it.
+            My name is Roland Branten, {age} years old and I live in Eindhoven,
+            the Netherlands. I currently work as a self-taught freelance
+            full-stack designer (that's a mouthful😕). What it means is that I
+            handle everything from the design that determines how a site will
+            look to the code that makes it functional and able to exist.
             <br />
             <br />
-            I have a ‘semi-healthy’ addiction in trying to optimize and improve
-            my life in every way that seems useful to me. I probably spend to
-            much time thinking about things that aren't that important in the
-            end and apparently I tend to give out pretty personal information to
-            strange people on the web.
+            At the moment my biggest passion is creating things that I couldn't
+            create yesterday.{" "}
+            <Italic>
+               That sentence came to me while writing this and I like it, so I'm
+               going to stick with it.
+            </Italic>{" "}
+            Nowadays, this is mostly through music, programming, art or design.
             <br />
             <br />
-            All jokes aside, although it wasn’t really a joke, I’m just a
-            regular guy who’s trying to make the most of is his life and likes
-            to share his experiences with you.
-            <br />
-            <br />
-            Oh and don’t bother, I don’t do social media.
+            Oh, and don’t bother, I don’t do social media.
          </AboutTekst>
       </ContentWrapper>
    );

@@ -38,7 +38,7 @@ export default function JournalTemplate({ data }) {
    return (
       <Layout pageStyle="page">
          <Head
-            title={`week ${week}`}
+            title={`Entry ${week}`}
             description={shortDescription}
             keywords={keywords}
          />
