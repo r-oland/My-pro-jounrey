@@ -1,5 +1,5 @@
 // Components==============
-import CardWaveImp from "assets/blog-card-wave.svg";
+import CardWaveImp from "assets/Blog-card-wave.svg";
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
