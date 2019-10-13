@@ -34,6 +34,7 @@ module.exports = {
             short_name: `MPJ`,
             start_url: `https://www.myprojourney.com`,
             background_color: `#fbf4ea`,
+            theme_color: `#fbf4ea`,
             display: `standalone`,
             icon: `icon/icon.png`
          }
