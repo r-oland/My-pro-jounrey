@@ -9,7 +9,7 @@ const TitleWrapper = styled.div`
    margin: 1em auto 1.3em;
    text-align: center;
    position: absolute;
-   top: -5em;
+   top: -6em;
    width: 100%;
    left: 50%;
    transform: translateX(-50%);
@@ -17,27 +17,27 @@ const TitleWrapper = styled.div`
    margin: 0;
 
    @media screen and (min-width: 1000px) {
-      top: -6em;
+      top: -8em;
    }
 `;
 
 const Entry = styled.p`
-   ${flexUnit(5, 22, 26, "vw", "font-size")}
-   font-weight: 700;
+   ${flexUnit(2.5, 20, 24, "vw", "font-size")}
+   font-weight: 300;
    margin: 0;
 `;
 
 const Title = styled.h1`
-   font-weight: 500;
-   ${flexUnit(2.5, 17, 19, "vw", "font-size")}
-   margin-top: 0.5em;
+   font-weight: 700;
+   ${flexUnit(2.5, 22, 30, "vw", "font-size")}
+   margin-bottom: 0.4em;
 `;
 
-export default function DropDown({ week, title }) {
+export default function DropDown({ entry, title }) {
    return (
       <TitleWrapper>
-         <Entry>Entry {week}</Entry>
          <Title>{title}</Title>
+         <Entry>Entry {entry}</Entry>
       </TitleWrapper>
    );
 }

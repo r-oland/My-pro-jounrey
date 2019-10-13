@@ -32,11 +32,10 @@ const BlogContainer = styled.div`
 const TitleText = styled.div`
    opacity: 1;
    text-align: center;
-   padding: 1em 0;
+   padding: 1em 5vw;
 `;
 
-const Title = styled.h3`
-   padding: 0 1em;
+const Title = styled.h1`
    margin: 0;
 `;
 
@@ -47,7 +46,7 @@ const PublishedDate = styled.p`
 
 const Content = styled.div`
    margin: 0 auto;
-   max-width: 80%;
+   max-width: 90%;
 `;
 
 export default function BlogContent({

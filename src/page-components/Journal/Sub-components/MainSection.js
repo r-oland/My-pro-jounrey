@@ -35,7 +35,7 @@ export default function MainSection() {
                node {
                   title
                   slug
-                  week
+                  entry
                   keywords
                   shortDescription
                }
@@ -47,14 +47,14 @@ export default function MainSection() {
    const MainSectionContent = data.map(content => {
       const title = content.node.title;
       const slug = content.node.slug;
-      const week = content.node.week;
+      const entry = content.node.entry;
       const keywords = content.node.keywords;
       const shortDescription = content.node.shortDescription;
 
       return (
-         <Slide index={week} key={week} style={{ height: "90vh" }}>
+         <Slide index={entry} key={entry} style={{ height: "90vh" }}>
             <MainSectionWrapper key={slug}>
-               <DropDown week={week} title={title} />
+               <DropDown entry={entry} title={title} />
                <Description
                   slug={slug}
                   keywords={keywords}

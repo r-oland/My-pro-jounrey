@@ -16,8 +16,8 @@ export default function index() {
       <Layout pageStyle="home">
          <Head
             title="Home"
-            description="Page description goes here"
-            keywords="content"
+            description="On this site I'm documenting my professional journey of becoming a freelance developer/designer so that you might also benefit from the things I'm learning."
+            keywords="public journal, web development journal, freelance journal "
             pageStyle="home"
          />
          <BackgroundFix>

@@ -30,7 +30,8 @@ const FlexWrapper2 = styled.div`
 
 export default function JournalTemplate({ data }) {
    const contentfulData = data.contentfulJournalPost;
-   const week = contentfulData.week;
+   const entry = contentfulData.entry;
+   const title = contentfulData.title;
    const shortDescription = contentfulData.shortDescription;
    const keywords = contentfulData.keywords;
    const content = contentfulData.content.json;
@@ -38,7 +39,7 @@ export default function JournalTemplate({ data }) {
    return (
       <Layout pageStyle="page">
          <Head
-            title={`Entry ${week}`}
+            title={`Entry ${entry}`}
             description={shortDescription}
             keywords={keywords}
          />
@@ -50,7 +51,7 @@ export default function JournalTemplate({ data }) {
                </FlexWrapper>
             </FlexWrapper2>
          </Container>
-         <JournalContent week={week} content={content} />
+         <JournalContent entry={entry} content={content} title={title} />
       </Layout>
    );
 }
@@ -58,7 +59,8 @@ export default function JournalTemplate({ data }) {
 export const query = graphql`
    query JournalContent($slug: String!) {
       contentfulJournalPost(slug: { eq: $slug }) {
-         week
+         entry
+         title
          keywords
          shortDescription
          content {

@@ -6,6 +6,7 @@ import textWrapper from "assets/TextWrapper.svg";
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "../../global-ui-components/Button";
+import { flexUnit } from "../../style/Mixins";
 // =========================
 
 // keyframes
@@ -87,12 +88,13 @@ const TextWrapper = styled.div`
    margin: 2em 0.8em 0;
    text-align: center;
 
-   h4 {
+   h1 {
       color: ${({ theme }) => theme.red};
-      margin: 0.5em 0;
+      margin: 0.5em 0 1em;
+      ${flexUnit(2.5, 25, 34, "vw", "font-size")}
 
       @media screen and (min-width: 768px) {
-         margin: 0;
+         margin: 0 0 1em;
       }
    }
 
@@ -184,21 +186,22 @@ export default function Info() {
             <DarkFishSvg />
          </Fishes>
          <TextWrapper>
-            <h4>Great question!</h4>
+            <h1>My professional journey</h1>
+            <strong>Let me explain..</strong>
             <p>
                Midway 2019 I began to question my choice for going to college. I
                wondered whether I went because it was a well thought out
                decision that would be of the most value to me or whether I went
                because I was 'supposed to'. I passed the year with the full
-               amount of obtainable points without any real problems. And yet I
-               never really felt like I was learning something that was of real
-               value to my at that moment or in the future. Rather, I often felt
-               restricted to think and act in boxes.
+               amount of obtainable points, without any real problems. Yet I
+               very rarely felt like I was learning something that was of real
+               value to me or my future. Rather, I often felt restricted to
+               think and act in boxes.
                <br />
                <br />
-               And so I decided to listen to my gut feeling and took matters
-               into my own hands. I guess you could see it as a little
-               experiment. The hypothesis is as followed:
+               So I decided to listen to my gut feeling and took matters into my
+               own hands. I guess you could see it as a little experiment. The
+               hypothesis is as followed:
                <Span>
                   `I’m able to educate myself in a more enjoyable and effective
                   way, whilst achieving the same or better results with the

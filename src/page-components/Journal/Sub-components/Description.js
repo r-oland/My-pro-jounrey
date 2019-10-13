@@ -34,7 +34,7 @@ const Bar = styled.div`
    width: 40px;
 `;
 
-const Subjects = styled.p`
+const Subjects = styled.h2`
    ${flexUnit(6, 14, 17, "vw", "font-size")}
    margin: 0.3em 0 1em;
    font-weight: 300;
@@ -77,7 +77,7 @@ export default function Description({ keywords, shortDescription, slug }) {
             <Bar />
          </JournalCardSmall>
          <ShortDescription>{shortDescription}</ShortDescription>
-         <JournalButton to={`/journal/${slug}`}>Visit</JournalButton>
+         <JournalButton to={`/journal/${slug}`}>Journal entry</JournalButton>
       </DescriptionWrapper>
    );
 }

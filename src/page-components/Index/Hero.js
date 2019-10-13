@@ -161,10 +161,11 @@ const HeroWave2 = styled.div`
    }
 `;
 
-const WelcomText = styled.h3`
+const WelcomText = styled.p`
    text-align: right;
    padding-top: 0.5rem;
    margin-top: 0;
+   font-weight: 700;
    font-size: 29px;
 
    @media screen and (min-width: 500px) {
@@ -210,7 +211,7 @@ const ScrollSection = styled.div`
    }
 `;
 
-const WIT = styled.h3`
+const WIT = styled.p`
    ${flexUnit(4, 28, 34, "vw", "font-size")}
    font-weight: 500;
    margin-bottom: 0.7em;

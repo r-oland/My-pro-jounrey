@@ -5,6 +5,7 @@ import LeftArrowImp from "assets/LeftArrow.inline.svg";
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import { flexUnit } from "../../style/Mixins";
 // =========================
 
 const JournalContainer = styled.div`
@@ -23,11 +24,19 @@ const JournalContainer = styled.div`
    }
 `;
 
-const Title = styled.h4`
+const Title = styled.div`
    margin: 0;
    text-align: center;
    grid-column: 1/3;
    grid-row: 1;
+
+   p {
+      ${flexUnit(3, 22, 28, "vw", "font-size")}
+   }
+
+   h1 {
+      ${flexUnit(3, 25, 34, "vw", "font-size")}
+   }
 `;
 
 const Content = styled.div`
@@ -54,7 +63,7 @@ const LeftArrowWrapper = styled(Link)`
    }
 `;
 
-export default function JournalContent({ week, content }) {
+export default function JournalContent({ entry, content, title }) {
    const richTextOptions = {
       renderNode: {
          [BLOCKS.EMBEDDED_ASSET]: node => {
@@ -75,7 +84,10 @@ export default function JournalContent({ week, content }) {
                <LeftArrowWrapper to="/journal">
                   <LeftArrowSvg />
                </LeftArrowWrapper>
-               <Title>Entry {week}</Title>
+               <Title>
+                  <p> Entry {entry}</p>
+                  <h1>{title}</h1>
+               </Title>
             </TitleWrapper>
             {documentToReactComponents(content, richTextOptions)}
          </Content>
