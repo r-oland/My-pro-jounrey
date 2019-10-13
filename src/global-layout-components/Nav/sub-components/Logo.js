@@ -1,7 +1,7 @@
 // Components==============
-import BrandImageImp from "assets/BrandImage.inline.svg";
-import LogoBlackImp from "assets/LogoBlack.inline.svg";
-import LogoWhiteImp from "assets/LogoWhite.inline.svg";
+import LogoBlackImp from "assets/Logo-text-black.svg";
+import LogoWhiteImp from "assets/Logo-text-white.svg";
+import BrandImage from "assets/My-pro-journey-logo.svg";
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
@@ -13,19 +13,19 @@ const LogoWrapper = styled(Link)`
    align-items: center;
 `;
 
-const BrandImageSvg = styled(BrandImageImp)`
+const BrandImageSvg = styled.img`
    ${flexUnit(3, 35, 50, "vw", "width")}
    margin-right: 1em;
    z-index: 50;
    position: relative;
 `;
 
-const LogoWhiteSvg = styled(LogoWhiteImp)`
+const LogoWhiteSvg = styled.img`
    ${flexUnit(10, 140, 225, "vw", "width")}
    display: ${({ pagestyle }) => (pagestyle === "home" ? "block" : "none")};
 `;
 
-const LogoBlackSvg = styled(LogoBlackImp)`
+const LogoBlackSvg = styled.img`
    ${flexUnit(10, 140, 225, "vw", "width")}
    display: ${({ pagestyle }) => (pagestyle === "page" ? "block" : "none")};
 `;
@@ -33,9 +33,17 @@ const LogoBlackSvg = styled(LogoBlackImp)`
 export default function Logo({ pageStyle }) {
    return (
       <LogoWrapper to="/">
-         <BrandImageSvg />
-         <LogoWhiteSvg pagestyle={pageStyle} />
-         <LogoBlackSvg pagestyle={pageStyle} />
+         <BrandImageSvg src={BrandImage} alt="My pro journey logo" />
+         <LogoWhiteSvg
+            pagestyle={pageStyle}
+            src={LogoWhiteImp}
+            alt="My pro journey logo text white"
+         />
+         <LogoBlackSvg
+            pagestyle={pageStyle}
+            src={LogoBlackImp}
+            alt="My pro journey logo text black"
+         />
       </LogoWrapper>
    );
 }

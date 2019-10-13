@@ -89,7 +89,7 @@ export default function Content({ headshot }) {
 
    return (
       <ContentWrapper>
-         <Img fluid={headshot} alt="headshot" className="headshotImg" />
+         <Img fluid={headshot} alt="Roland Branten" className="headshotImg" />
          <IKIS>
             I'll keep it short <span>.</span>
          </IKIS>
