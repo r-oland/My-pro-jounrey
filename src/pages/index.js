@@ -17,7 +17,7 @@ export default function index() {
          <Head
             title="Home"
             description="On this site I'm documenting my professional journey of becoming a freelance developer/designer so that you might also benefit from the things I'm learning."
-            keywords="public journal, web development journal, freelance journal "
+            keywords="my pro journey, public journal, web development journal, freelance journal "
             pageStyle="home"
          />
          <BackgroundFix>
