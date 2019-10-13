@@ -25,7 +25,7 @@ const JournalCardSmall = styled.div`
 
 const SubjectTitle = styled.strong`
    font-weight: 500;
-   ${flexUnit(6, 17, 22, "vw", "font-size")}
+   ${flexUnit(6, 15, 20, "vw", "font-size")}
 `;
 
 const Bar = styled.div`

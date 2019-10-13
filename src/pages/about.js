@@ -12,8 +12,8 @@ export default function about({ data }) {
       <Layout pageStyle="page">
          <Head
             title="About"
-            description="Page description goes here"
-            keywords="content"
+            description="This page contains the information about the author of this website, Roland Branten"
+            keywords="about, Roland Branten"
          />
          <Container>
             <Content headshot={data.Headshot.childImageSharp.fluid} />

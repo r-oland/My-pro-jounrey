@@ -11,7 +11,7 @@ import Filter from "./Sub-components/Filter";
 const BlogPostsWrapper = styled.div`
    margin: 0.5em 0 4em;
 
-   h2 {
+   h1 {
       ${flexUnit(9, 30, 38, "vw", "font-size")};
       text-align: center;
 
@@ -63,7 +63,7 @@ export default function BlogPosts() {
       <BlogPostsWrapper>
          <Container>
             <TitleWrapper>
-               <h2>Blog</h2>
+               <h1>Blog</h1>
                <Filter sortOrder={sortOrder} setSortOrder={setSortOrder} />
             </TitleWrapper>
             <CardSection>

@@ -10,8 +10,8 @@ export default function blog({ data }) {
       <Layout pageStyle="page">
          <Head
             title="Blog"
-            description="Page description goes here"
-            keywords="content"
+            description="This blog is about all kinds of fun stuff that have made my life just a little better. I talk about big topics and small tricks that help me on a daily base."
+            keywords="productivity, improvement, tips and tricks"
          />
          <BlogPosts />
       </Layout>

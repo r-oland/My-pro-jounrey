@@ -38,11 +38,12 @@ const ContentWrapper = styled.div`
          grid-row: 1/3;
          justify-self: end;
          align-self: center;
+         transform: translateY(4vh);
       }
    }
 `;
 
-const IKIS = styled.h3`
+const IKIS = styled.p`
    margin: 0.3em 0 1em;
    text-align: center;
    font-weight: 500;

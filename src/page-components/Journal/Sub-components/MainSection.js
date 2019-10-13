@@ -33,6 +33,7 @@ export default function MainSection() {
          allContentfulJournalPost(sort: { fields: publishDate, order: DESC }) {
             edges {
                node {
+                  title
                   slug
                   week
                   keywords
@@ -44,6 +45,7 @@ export default function MainSection() {
    `).allContentfulJournalPost.edges;
 
    const MainSectionContent = data.map(content => {
+      const title = content.node.title;
       const slug = content.node.slug;
       const week = content.node.week;
       const keywords = content.node.keywords;
@@ -52,7 +54,7 @@ export default function MainSection() {
       return (
          <Slide index={week} key={week} style={{ height: "90vh" }}>
             <MainSectionWrapper key={slug}>
-               <DropDown week={week} />
+               <DropDown week={week} title={title} />
                <Description
                   slug={slug}
                   keywords={keywords}
