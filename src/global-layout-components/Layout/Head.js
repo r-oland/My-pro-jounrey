@@ -23,10 +23,6 @@ export default function Head({ title, description, keywords, pageStyle }) {
          <meta name="description" content={description} />
          <meta name="keywords" content={keywords} />
          <title>{`${siteTitle} | ${title}`}</title>
-         <link
-            rel="stylesheet"
-            href="https://use.typekit.net/clp7zrc.css"
-         ></link>
          <html lang="en" />
       </Helmet>
    );

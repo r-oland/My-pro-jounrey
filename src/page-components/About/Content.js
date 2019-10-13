@@ -93,7 +93,7 @@ export default function Content({ headshot }) {
          <IKIS>
             I'll keep it short <span>.</span>
          </IKIS>
-         <AboutTekst>
+         <AboutTekst className="test">
             My name is Roland Branten, {age} years old and I live in Eindhoven,
             the Netherlands. I currently work as a self-taught freelance
             full-stack designer (that's a mouthful😕). What it means is that I
