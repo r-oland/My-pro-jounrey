@@ -55,7 +55,7 @@ const ShortDescription = styled.p`
 export default function Card({ data, sortOrder }) {
    const cards = data.map(edge => {
       const slug = edge.node.slug;
-      const blogImg = edge.node.blogImage.file.url;
+      const svg = edge.node.svg.file.url;
       const title = edge.node.title;
       const description = edge.node.shortDescription;
 

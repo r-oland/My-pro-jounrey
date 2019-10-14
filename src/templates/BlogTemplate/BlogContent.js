@@ -49,12 +49,7 @@ const Content = styled.div`
    max-width: 90%;
 `;
 
-export default function BlogContent({
-   title,
-   publishedDate,
-   blogImage,
-   content
-}) {
+export default function BlogContent({ title, publishedDate, svg, content }) {
    const richTextOptions = {
       renderNode: {
          [BLOCKS.EMBEDDED_ASSET]: node => {
@@ -70,7 +65,7 @@ export default function BlogContent({
 
    return (
       <BlogContainer>
-         <img src={blogImage} alt="backgroundSvg" className="backgroundSvg" />
+         <img src={svg} alt="backgroundSvg" className="backgroundSvg" />
          <TitleText>
             <Title>{title}</Title>
             <PublishedDate>{publishedDate}</PublishedDate>

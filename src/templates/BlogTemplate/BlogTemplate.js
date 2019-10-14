@@ -42,7 +42,7 @@ export default function BlogTemplate({ data }) {
    const shortDescription = contentfulData.shortDescription;
    const publishedDate = contentfulData.publishedDate;
    const keywords = contentfulData.keywords;
-   const blogImage = contentfulData.blogImage.file.url;
+   const svg = contentfulData.svg.file.url;
    const content = contentfulData.content.json;
 
    return (
@@ -63,7 +63,7 @@ export default function BlogTemplate({ data }) {
          <BlogContent
             title={title}
             publishedDate={publishedDate}
-            blogImage={blogImage}
+            svg={svg}
             content={content}
          />
       </Layout>

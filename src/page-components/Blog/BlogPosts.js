@@ -44,7 +44,7 @@ export default function BlogPosts() {
          allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
             edges {
                node {
-                  blogImage {
+                  svg {
                      file {
                         url
                      }
