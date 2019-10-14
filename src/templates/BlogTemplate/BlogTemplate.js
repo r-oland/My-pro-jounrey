@@ -75,7 +75,7 @@ export const query = graphql`
       contentfulBlogPost(slug: { eq: $slug }) {
          title
          shortDescription
-         publishedDate(formatString: "DD/MM/YYYY")
+         publishedDate(formatString: "MMMM DD YYYY")
          keywords
          blogImage {
             file {

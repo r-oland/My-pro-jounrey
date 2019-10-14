@@ -9,7 +9,7 @@ const TitleWrapper = styled.div`
    margin: 1em auto 1.3em;
    text-align: center;
    position: absolute;
-   top: -6em;
+   top: -5.1em;
    width: 100%;
    left: 50%;
    transform: translateX(-50%);
@@ -17,27 +17,26 @@ const TitleWrapper = styled.div`
    margin: 0;
 
    @media screen and (min-width: 1000px) {
-      top: -8em;
+      top: -6.5em;
    }
-`;
-
-const Entry = styled.p`
-   ${flexUnit(2.5, 20, 24, "vw", "font-size")}
-   font-weight: 300;
-   margin: 0;
 `;
 
 const Title = styled.h1`
    font-weight: 700;
-   ${flexUnit(2.5, 22, 30, "vw", "font-size")}
-   margin-bottom: 0.4em;
+   ${flexUnit(2.5, 24, 30, "vw", "font-size")}
+   margin: 0.4em 0 0.3em;
 `;
 
-export default function DropDown({ entry, title }) {
+const Date = styled.p`
+   ${flexUnit(2.5, 14, 15, "vw", "font-size")}
+   margin: 0;
+`;
+
+export default function DropDown({ entry, title, publishDate }) {
    return (
       <TitleWrapper>
          <Title>{title}</Title>
-         <Entry>Entry {entry}</Entry>
+         <Date>{publishDate}</Date>
       </TitleWrapper>
    );
 }

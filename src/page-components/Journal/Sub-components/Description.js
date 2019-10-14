@@ -24,7 +24,7 @@ const JournalCardSmall = styled.div`
 `;
 
 const SubjectTitle = styled.strong`
-   font-weight: 500;
+   font-weight: 400;
    ${flexUnit(6, 15, 20, "vw", "font-size")}
 `;
 
@@ -41,12 +41,18 @@ const Subjects = styled.h2`
 `;
 
 const ShortDescription = styled.p`
-   line-height: 1.4;
+   line-height: 1.5;
    ${flexUnit(4, 16, 19, "vw", "font-size")}
 
    @media screen and (min-width: 1000px) {
-      line-height: 2;
+      line-height: 1.7;
    }
+`;
+
+const Entry = styled.p`
+   ${flexUnit(2.5, 22, 26, "vw", "font-size")}
+   font-weight: 600;
+   margin: 0 0 1.5em;
 `;
 
 const JournalButton = styled(Button)`
@@ -67,10 +73,16 @@ const JournalButton = styled(Button)`
    }
 `;
 
-export default function Description({ keywords, shortDescription, slug }) {
+export default function Description({
+   keywords,
+   shortDescription,
+   slug,
+   entry
+}) {
    return (
       <DescriptionWrapper>
          <JournalCardSmall>
+            <Entry>Entry {entry}</Entry>
             <SubjectTitle>Subjects</SubjectTitle>
 
             <Subjects>{keywords}</Subjects>

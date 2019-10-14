@@ -34,6 +34,7 @@ export default function MainSection() {
             edges {
                node {
                   title
+                  publishDate(formatString: "MMMM DD YYYY")
                   slug
                   entry
                   keywords
@@ -46,6 +47,7 @@ export default function MainSection() {
 
    const MainSectionContent = data.map(content => {
       const title = content.node.title;
+      const publishDate = content.node.publishDate;
       const slug = content.node.slug;
       const entry = content.node.entry;
       const keywords = content.node.keywords;
@@ -54,8 +56,9 @@ export default function MainSection() {
       return (
          <Slide index={entry} key={entry} style={{ height: "90vh" }}>
             <MainSectionWrapper key={slug}>
-               <DropDown entry={entry} title={title} />
+               <DropDown title={title} publishDate={publishDate} />
                <Description
+                  entry={entry}
                   slug={slug}
                   keywords={keywords}
                   shortDescription={shortDescription}

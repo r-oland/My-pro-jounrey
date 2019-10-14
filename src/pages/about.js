@@ -13,7 +13,7 @@ export default function about({ data }) {
          <Head
             title="About"
             description="This page contains the information about the author of this website, Roland Branten"
-            keywords="about, Roland Branten"
+            keywords="about, Roland Branten, my pro journey"
          />
          <Container>
             <Content headshot={data.Headshot.childImageSharp.fluid} />

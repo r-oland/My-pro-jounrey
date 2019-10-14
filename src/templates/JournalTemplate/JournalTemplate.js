@@ -32,6 +32,7 @@ export default function JournalTemplate({ data }) {
    const contentfulData = data.contentfulJournalPost;
    const entry = contentfulData.entry;
    const title = contentfulData.title;
+   const publishDate = contentfulData.publishDate;
    const shortDescription = contentfulData.shortDescription;
    const keywords = contentfulData.keywords;
    const content = contentfulData.content.json;
@@ -51,7 +52,12 @@ export default function JournalTemplate({ data }) {
                </FlexWrapper>
             </FlexWrapper2>
          </Container>
-         <JournalContent entry={entry} content={content} title={title} />
+         <JournalContent
+            entry={entry}
+            content={content}
+            title={title}
+            publishDate={publishDate}
+         />
       </Layout>
    );
 }
@@ -62,6 +68,7 @@ export const query = graphql`
          entry
          title
          keywords
+         publishDate(formatString: "MMMM DD YYYY")
          shortDescription
          content {
             json

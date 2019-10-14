@@ -11,7 +11,7 @@ export default function journal() {
       <Layout pageStyle="page">
          <Head
             title="Journal"
-            description="Here, you will find my journey as a freelance web designer/developer. You're able to reed my approach, results, and failures in this online public journal."
+            description="You will find my journey as a freelance web designer/developer here. You're able to reed my approach, results, and failures in this online public journal."
             keywords="journal, public journal, freelance, progression"
          />
          <Container style={{ position: "relative" }}>
