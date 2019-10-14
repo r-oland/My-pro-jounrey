@@ -32,6 +32,7 @@ const CardWave = styled.div`
    background-image: url(${CardWaveImp});
    background-size: cover;
    height: 260px;
+   width: 100%;
    position: absolute;
    bottom: 0;
    padding: 6.4em 1.2em 2em;
