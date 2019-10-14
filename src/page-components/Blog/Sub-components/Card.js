@@ -61,7 +61,7 @@ export default function Card({ data, sortOrder }) {
 
       return (
          <CardWrapper to={`/blog/${slug}`} key={slug}>
-            <img src={blogImg} alt="blogImg" className="cardImage" />
+            <img src={svg} alt="blog image" className="cardImage" />
             <CardWave>
                <BlogTitle>{title}</BlogTitle>
                <ShortDescription>{description}</ShortDescription>
