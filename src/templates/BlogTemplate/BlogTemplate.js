@@ -77,7 +77,7 @@ export const query = graphql`
          shortDescription
          publishedDate(formatString: "MMMM DD YYYY")
          keywords
-         blogImage {
+         svg {
             file {
                url
             }

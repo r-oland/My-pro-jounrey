@@ -38,6 +38,7 @@ export default function MainSection() {
                   slug
                   entry
                   keywords
+                  subjects
                   shortDescription
                }
             }
@@ -50,7 +51,7 @@ export default function MainSection() {
       const publishDate = content.node.publishDate;
       const slug = content.node.slug;
       const entry = content.node.entry;
-      const keywords = content.node.keywords;
+      const subjects = content.node.subjects;
       const shortDescription = content.node.shortDescription;
 
       return (
@@ -60,7 +61,7 @@ export default function MainSection() {
                <Description
                   entry={entry}
                   slug={slug}
-                  keywords={keywords}
+                  subjects={subjects}
                   shortDescription={shortDescription}
                />
             </MainSectionWrapper>

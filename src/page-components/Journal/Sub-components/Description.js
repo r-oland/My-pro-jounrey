@@ -74,7 +74,7 @@ const JournalButton = styled(Button)`
 `;
 
 export default function Description({
-   keywords,
+   subjects,
    shortDescription,
    slug,
    entry
@@ -85,7 +85,7 @@ export default function Description({
             <Entry>Entry {entry}</Entry>
             <SubjectTitle>Subjects</SubjectTitle>
 
-            <Subjects>{keywords}</Subjects>
+            <Subjects>{subjects}</Subjects>
             <Bar />
          </JournalCardSmall>
          <ShortDescription>{shortDescription}</ShortDescription>
