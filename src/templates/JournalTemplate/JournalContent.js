@@ -33,7 +33,7 @@ const Title = styled.div`
    h1 {
       font-weight: 700;
       ${flexUnit(2.5, 35, 42.5, "vw", "font-size")}
-      margin: 0em 0 0.25em;
+      margin: 1.3em 0 0.25em;
    }
 `;
 
@@ -78,6 +78,25 @@ const LeftArrowWrapper = styled(Link)`
    }
 `;
 
+const RichText = styled.div`
+   p {
+      line-height: 2;
+   }
+
+   a {
+      text-decoration: underline;
+   }
+
+   ul {
+      list-style: initial;
+      padding-left: 40px;
+
+      @media screen and (min-width: 768px) {
+         padding-left: 50px;
+      }
+   }
+`;
+
 export default function JournalContent({ entry, content, title, publishDate }) {
    const richTextOptions = {
       renderNode: {
@@ -106,7 +125,9 @@ export default function JournalContent({ entry, content, title, publishDate }) {
                   <Bar />
                </Title>
             </TitleWrapper>
-            {documentToReactComponents(content, richTextOptions)}
+            <RichText>
+               {documentToReactComponents(content, richTextOptions)}
+            </RichText>
          </Content>
       </JournalContainer>
    );

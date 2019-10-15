@@ -26,6 +26,11 @@ const BlogContainer = styled.div`
       height: 40vh;
       object-fit: cover;
       width: 100%;
+      background-position-y: 170px;
+
+      @media screen and (min-width: 768px) {
+         object-position: 0 -20em;
+      }
    }
 `;
 
@@ -47,6 +52,23 @@ const PublishedDate = styled.p`
 const Content = styled.div`
    margin: 0 auto;
    max-width: 90%;
+
+   p {
+      line-height: 2;
+   }
+
+   a {
+      text-decoration: underline;
+   }
+
+   ul {
+      list-style: initial;
+      padding-left: 40px;
+
+      @media screen and (min-width: 768px) {
+         padding-left: 50px;
+      }
+   }
 `;
 
 export default function BlogContent({ title, publishedDate, svg, content }) {
