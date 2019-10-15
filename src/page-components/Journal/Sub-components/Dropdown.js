@@ -17,7 +17,7 @@ const TitleWrapper = styled.div`
    margin: 0;
 
    @media screen and (min-width: 1000px) {
-      top: -6.5em;
+      top: -6em;
    }
 `;
 

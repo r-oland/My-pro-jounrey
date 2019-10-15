@@ -53,6 +53,7 @@ export default function BlogPosts() {
                   title
                   slug
                   publishedDate(formatString: "MM/DD/YYYY HH:mm")
+                  nerdContent
                }
             }
          }

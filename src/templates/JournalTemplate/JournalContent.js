@@ -32,7 +32,7 @@ const Title = styled.div`
 
    h1 {
       font-weight: 700;
-      ${flexUnit(2.5, 24, 30, "vw", "font-size")}
+      ${flexUnit(2.5, 35, 42.5, "vw", "font-size")}
       margin: 0em 0 0.25em;
    }
 `;

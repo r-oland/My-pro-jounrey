@@ -1,7 +1,7 @@
 // Components==============
 import CardWaveImp from "assets/Blog-card-wave.svg";
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { flexUnit } from "../../../style/Mixins";
 // =========================
@@ -53,18 +53,73 @@ const ShortDescription = styled.p`
    ${flexUnit(8, 13, 14, "vw", "font-size")}
 `;
 
+const Nerd = styled.p`
+   display: ${({ nerdContent }) => (nerdContent === true ? "flex" : "none")};
+   color: ${({ theme }) => theme.red};
+   ${flexUnit(2.5, 13, 15, "vw", "font-size")}
+   margin: 0.2em 0 0;
+
+   b {
+      border: ${({ theme }) => theme.red} 2px solid;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      @media screen and (min-width: 1000px) {
+         display: flex;
+      }
+   }
+`;
+
+const PopupMessage = styled.p`
+   display: ${({ poppedUp }) => (poppedUp === true ? "block" : "none")};
+   position: absolute;
+   bottom: 20px;
+   background: ${({ theme }) => theme.white};
+   border-radius: 20px;
+   padding: 0.5em 1em;
+   width: 210px;
+   ${flexUnit(2.5, 14, 15, "vw", "font-size")}
+`;
+
 export default function Card({ data, sortOrder }) {
+   const [poppedUp, setPoppedUp] = useState(false);
+
    const cards = data.map(edge => {
       const slug = edge.node.slug;
       const svg = edge.node.svg.file.url;
       const title = edge.node.title;
       const description = edge.node.shortDescription;
+      const nerdContent = edge.node.nerdContent;
+
+      function handlePopUp() {
+         poppedUp === false ? setPoppedUp(true) : setPoppedUp(false);
+      }
 
       return (
          <CardWrapper to={`/blog/${slug}`} key={slug}>
-            <img src={svg} alt="blog image" className="cardImage" />
+            <img src={svg} alt="blog" className="cardImage" />
             <CardWave>
-               <BlogTitle>{title}</BlogTitle>
+               <BlogTitle>
+                  {title}{" "}
+                  <Nerd nerdContent={nerdContent}>
+                     Nerd Warning{" "}
+                     <b
+                        onMouseEnter={handlePopUp}
+                        onMouseLeave={handlePopUp}
+                        onClick={handlePopUp}
+                     >
+                        ?
+                     </b>
+                     <PopupMessage poppedUp={poppedUp}>
+                        This blog posts contains a lot of programming related
+                        subjects.{" "}
+                     </PopupMessage>
+                  </Nerd>
+               </BlogTitle>
                <ShortDescription>{description}</ShortDescription>
             </CardWave>
          </CardWrapper>

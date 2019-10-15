@@ -9,7 +9,6 @@ import DropDown from "./Dropdown";
 
 const MainSectionWrapper = styled.div`
    width: 90%;
-   height: calc(63vh - 14vw);
    margin: 6em auto 0;
    padding: 1em 1em 2em;
    background-color: #fff8ee;
@@ -19,11 +18,15 @@ const MainSectionWrapper = styled.div`
 
    @media screen and (min-width: 1000px) {
       margin: 0 auto;
-      top: 35%;
+      top: 45%;
       transform: translateY(-35%);
       height: initial;
       width: 75%;
       padding: 1em 2em;
+   }
+
+   @media screen and (min-width: 1100px) {
+      top: 40%;
    }
 `;
 
@@ -40,6 +43,7 @@ export default function MainSection() {
                   keywords
                   subjects
                   shortDescription
+                  nerdContent
                }
             }
          }
@@ -53,6 +57,7 @@ export default function MainSection() {
       const entry = content.node.entry;
       const subjects = content.node.subjects;
       const shortDescription = content.node.shortDescription;
+      const nerdContent = content.node.nerdContent;
 
       return (
          <Slide index={entry} key={entry} style={{ height: "90vh" }}>
@@ -63,6 +68,7 @@ export default function MainSection() {
                   slug={slug}
                   subjects={subjects}
                   shortDescription={shortDescription}
+                  nerdContent={nerdContent}
                />
             </MainSectionWrapper>
          </Slide>
