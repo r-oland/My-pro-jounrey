@@ -36,29 +36,31 @@ const CardSection = styled.div`
    align-content: space-between;
 `;
 
-export default function BlogPosts() {
-   const [sortOrder, setSortOrder] = useState("Newest first");
-
-   const data = useStaticQuery(graphql`
-      query blogPostPage {
-         allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
-            edges {
-               node {
-                  svg {
-                     file {
-                        url
-                     }
+const QUERY = graphql`
+   query blogPostPage {
+      allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
+         edges {
+            node {
+               svg {
+                  file {
+                     url
                   }
-                  shortDescription
-                  title
-                  slug
-                  publishedDate(formatString: "MM/DD/YYYY HH:mm")
-                  nerdContent
                }
+               shortDescription
+               title
+               slug
+               publishedDate(formatString: "MM/DD/YYYY HH:mm")
+               nerdContent
             }
          }
       }
-   `).allContentfulBlogPost.edges;
+   }
+`;
+
+export default function BlogPosts() {
+   const [sortOrder, setSortOrder] = useState("Newest first");
+
+   const data = useStaticQuery(QUERY).allContentfulBlogPost.edges;
 
    return (
       <BlogPostsWrapper>

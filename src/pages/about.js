@@ -1,10 +1,12 @@
 // Components==============
+
 import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-layout-components/Layout/Head";
 import Layout from "../global-layout-components/Layout/Layout";
 import { Container } from "../global-ui-components/Container";
 import Content from "../page-components/About/Content";
+
 // =========================
 
 export default function about({ data }) {

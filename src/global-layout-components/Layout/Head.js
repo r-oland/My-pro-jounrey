@@ -4,16 +4,18 @@ import React from "react";
 import { Helmet } from "react-helmet";
 // =========================
 
-export default function Head({ title, description, keywords, pageStyle }) {
-   const data = useStaticQuery(graphql`
-      query MyQuery {
-         site {
-            siteMetadata {
-               title
-            }
+const QUERY = graphql`
+   query MyQuery {
+      site {
+         siteMetadata {
+            title
          }
       }
-   `);
+   }
+`;
+
+export default function Head({ title, description, keywords, pageStyle }) {
+   const data = useStaticQuery(QUERY);
    const siteTitle = data.site.siteMetadata.title;
    return (
       <Helmet>

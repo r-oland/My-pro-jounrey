@@ -50,10 +50,12 @@ const BlogTitle = styled.h5`
 
 const ShortDescription = styled.p`
    color: ${({ theme }) => theme.white};
+   line-height: 1.5;
    ${flexUnit(8, 13, 14, "vw", "font-size")}
+   margin: 0.5em 0 0;
 `;
 
-const Nerd = styled.p`
+const Nerd = styled.div`
    display: ${({ nerdContent }) => (nerdContent === true ? "flex" : "none")};
    color: ${({ theme }) => theme.red};
    ${flexUnit(2.5, 13, 15, "vw", "font-size")}

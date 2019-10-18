@@ -30,25 +30,27 @@ const MainSectionWrapper = styled.div`
    }
 `;
 
-export default function MainSection() {
-   const data = useStaticQuery(graphql`
-      query JournalAllQuery {
-         allContentfulJournalPost(sort: { fields: publishDate, order: DESC }) {
-            edges {
-               node {
-                  title
-                  publishDate(formatString: "MMMM DD YYYY")
-                  slug
-                  entry
-                  keywords
-                  subjects
-                  shortDescription
-                  nerdContent
-               }
+const QUERY = graphql`
+   query JournalAllQuery {
+      allContentfulJournalPost(sort: { fields: publishDate, order: DESC }) {
+         edges {
+            node {
+               title
+               publishDate(formatString: "MMMM DD YYYY")
+               slug
+               entry
+               keywords
+               subjects
+               shortDescription
+               nerdContent
             }
          }
       }
-   `).allContentfulJournalPost.edges;
+   }
+`;
+
+export default function MainSection() {
+   const data = useStaticQuery(QUERY).allContentfulJournalPost.edges;
 
    const MainSectionContent = data.map(content => {
       const title = content.node.title;

@@ -5,18 +5,20 @@ import Carousel from "./Sub-components/Carousel";
 import MainSection from "./Sub-components/MainSection";
 // =========================
 
-export default function JournalPosts() {
-   const data = useStaticQuery(graphql`
-      query JournalAllQuery2 {
-         allContentfulJournalPost {
-            edges {
-               node {
-                  slug
-               }
+const QUERY = graphql`
+   query JournalAllQuery2 {
+      allContentfulJournalPost {
+         edges {
+            node {
+               slug
             }
          }
       }
-   `);
+   }
+`;
+
+export default function JournalPosts() {
+   const data = useStaticQuery(QUERY);
 
    const amountOfPages = data.allContentfulJournalPost.edges.length;
 
